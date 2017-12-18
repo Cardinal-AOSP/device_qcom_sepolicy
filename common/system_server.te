@@ -109,9 +109,6 @@ get_prop(system_server, xlat_prop)
 # For WFD
 allow system_server graphics_device:dir r_dir_perms;
 
-# Allow Izat service
-allow system_server izat_service:service_manager add;
-
 # For QSEE Svc Apps
 allow system_server qsee_svc_app_data_file:file rw_file_perms;
 allow system_server qsee_svc_app_data_file:dir r_dir_perms;
@@ -168,6 +165,7 @@ allow system_server sysfs_graphics:file rw_file_perms;
 # timerslack_ns
 allow system_server { location_app system_app } :file write;
 allow system_server opengles_prop:file r_file_perms;
+allow system_server graphics_vulkan_prop:file r_file_perms;
 allow system_server qemu_hw_mainkeys_prop:file r_file_perms;
 
 allow system_server hwui_prop:file r_file_perms;
